@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Fashion street</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        button {
+            font: 1rem;
+            border: none;
+            outline: none;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background-color: rgb(255, 199, 223);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzOTUuNTIgNTQuNTMyNzgyODA1MDc5MzY0IiBoZWlnaHQ9IjU0LjUzMjc4MjgwNTA3OTM2NCIgd2lkdGg9IjM5NS41MiI+PGc+PHN2ZyB2aWV3Qm94PSIwIDAgNDk5LjA2NDkwNjgyMDc5MTQ2IDY4LjgwOTE1Nzk5Mjc1NzM2IiBoZWlnaHQ9IjU0LjUzMjc4MjgwNTA3OTM2NCIgd2lkdGg9IjM5NS41MiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSwwLDAsMSwwLDkuNTA5ODA0MDM1MTc4NDgpIj48c3ZnIHZpZXdCb3g9IjAgMCAzOTUuNTIgNDkuNzg5NTQ5OTIyNDAwNDA0IiBoZWlnaHQ9IjQ5Ljc4OTU0OTkyMjQwMDQwNCIgd2lkdGg9IjM5NS41MiI+PGcgaWQ9InRleHRibG9ja3RyYW5zZm9ybSI+PHN2ZyB2aWV3Qm94PSIwIDAgMzk1LjUyIDQ5Ljc4OTU0OTkyMjQwMDQwNCIgaGVpZ2h0PSI0OS43ODk1NDk5MjI0MDA0MDQiIHdpZHRoPSIzOTUuNTIiIGlkPSJ0ZXh0YmxvY2siPjxnPjxzdmcgdmlld0JveD0iMCAwIDM5NS41MiA0OS43ODk1NDk5MjI0MDA0MDQiIGhlaWdodD0iNDkuNzg5NTQ5OTIyNDAwNDA0IiB3aWR0aD0iMzk1LjUyIj48ZyB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAsMCkiPjxzdmcgd2lkdGg9IjM5NS41MiIgdmlld0JveD0iMy43NSAtMzUuOSAyODkuOTIgMzYuNSIgaGVpZ2h0PSI0OS43ODk1NDk5MjI0MDA0MDQiIGRhdGEtcGFsZXR0ZS1jb2xvcj0iI2QxNTI3MiI+PHBhdGggZD0iTTguMDUgMEwzLjc1IDAgMy43NS0zNC41NSAyMy4yLTM0LjU1IDIyLjI1LTMwLjc1IDguMDUtMzAuNzUgOC4wNS0xOS4zNSAyMS40LTE5LjM1IDIxLjQtMTUuNyA4LjA1LTE1LjcgOC4wNSAwWk00MC44LTEzLjY1TDQwLjgtMTMuNjUgNDAuOC0xNS44NVE0MC44LTE5LjkgMzYuNi0xOS45TDM2LjYtMTkuOVEzMy4zLTE5LjkgMjkuNy0xNy43NUwyOS43LTE3Ljc1IDI4LjI1LTIwLjc1UTMyLjQ1LTIzLjQgMzcuMy0yMy40TDM3LjMtMjMuNFE0MC43LTIzLjQgNDIuODctMjEuNjggNDUuMDUtMTkuOTUgNDUuMDUtMTYuMzVMNDUuMDUtMTYuMzUgNDUuMDUgMCA0Mi4zNSAwIDQxLjEtM1EzOS41LTEuMzUgMzcuMy0wLjM4IDM1LjEgMC42IDMzLjMgMC42TDMzLjMgMC42UTMwLjIgMC42IDI4LjM1LTEuMSAyNi41LTIuOCAyNi41LTUuNTVMMjYuNS01LjU1UTI2LjUtMTMuNjUgNDAuOC0xMy42NVpNMzIuNS04LjhRMzEuNTUtNy45NSAzMS4yMi03LjI4IDMwLjktNi42IDMwLjktNS41MyAzMC45LTQuNDUgMzEuODItMy42OCAzMi43NS0yLjkgMzQuMjUtMi45TDM0LjI1LTIuOVEzNy40LTIuOSA0MC44LTUuN0w0MC44LTUuNyA0MC44LTEwLjdRMzQuNS0xMC42IDMyLjUtOC44TDMyLjUtOC44Wk02NS0yMS45TDYzLjc1LTE4LjhRNjEuMi0xOS45IDU4Ljk1LTE5LjlMNTguOTUtMTkuOVE1NC42LTE5LjkgNTQuNi0xNy4yNUw1NC42LTE3LjI1UTU0LjYtMTQuOTUgNjAuNC0xMi44TDYwLjQtMTIuOFE2Mi41NS0xMiA2NC4zNy0xMC4zIDY2LjItOC42IDY2LjItNi4yTDY2LjItNi4yUTY2LjItMi43NSA2My45NS0xLjA3IDYxLjcgMC42IDU3LjcgMC42IDUzLjcgMC42IDQ5LjktMS42TDQ5LjktMS42IDUxLjE1LTQuN1E1NC4zLTIuOSA1OC4zLTIuOUw1OC4zLTIuOVE2MC0yLjkgNjEuMDUtMy42MyA2Mi4xLTQuMzUgNjIuMS01LjYgNjIuMS02Ljg1IDYwLjktNy43NSA1OS43LTguNjUgNTgtOS4zNSA1Ni4zLTEwLjA1IDU0LjYtMTAuODggNTIuOS0xMS43IDUxLjctMTMuMiA1MC41LTE0LjcgNTAuNS0xNi43NUw1MC41LTE2Ljc1UTUwLjUtMTkuOTUgNTIuNjctMjEuNjggNTQuODUtMjMuNCA1OC4yLTIzLjQgNjEuNTUtMjMuNCA2NS0yMS45TDY1LTIxLjlaTTcxLjA0LTM1LjlMNzUuMjktMzUuOSA3NS4yOS0yMC40NVE3OS4wNC0yMy40IDgzLjM0LTIzLjRMODMuMzQtMjMuNFE4Ni42OS0yMy40IDg4LjY3LTIxLjczIDkwLjY0LTIwLjA1IDkwLjY0LTE3LjM1TDkwLjY0LTE3LjM1IDkwLjY0IDAgODYuMzkgMCA4Ni4zOS0xNy4wNVE4Ni4zOS0xOC4zNSA4NS4zNy0xOS4wNSA4NC4zNC0xOS43NSA4Mi42NC0xOS43NUw4Mi42NC0xOS43NVE3OS4wOS0xOS43NSA3NS4yOS0xNy4yTDc1LjI5LTE3LjIgNzUuMjkgMCA3MS4wNCAwIDcxLjA0LTM1LjlaTTEwMi4wOS0yOC4xOFExMDEuMjktMjcuMzUgMTAwLjE0LTI3LjM1IDk4Ljk5LTI3LjM1IDk4LjE5LTI4LjE4IDk3LjM5LTI5IDk3LjM5LTMwLjE1IDk3LjM5LTMxLjMgOTguMjItMzIuMTMgOTkuMDQtMzIuOTUgMTAwLjE0LTMyLjk1IDEwMS4yNC0zMi45NSAxMDIuMDctMzIuMTMgMTAyLjg5LTMxLjMgMTAyLjg5LTMwLjE1IDEwMi44OS0yOSAxMDIuMDktMjguMThaTTk4LjA0IDBMOTguMDQtMjIuOCAxMDIuMjktMjIuOCAxMDIuMjkgMCA5OC4wNCAwWk0xMTkuMjQtMjAuMTVMMTE5LjI0LTIwLjE1UTExNy4zNC0yMC4xNSAxMTUuOTYtMTkuMyAxMTQuNTktMTguNDUgMTEzLjk0LTE3LjFMMTEzLjk0LTE3LjFRMTEyLjc0LTE0LjU1IDExMi43NC0xMS42NUwxMTIuNzQtMTEuNjVRMTEyLjc0LTIuNjUgMTE4Ljk5LTIuNjVMMTE4Ljk5LTIuNjVRMTIwLjg5LTIuNjUgMTIyLjI0LTMuNSAxMjMuNTktNC4zNSAxMjQuMjktNS43TDEyNC4yOS01LjdRMTI1LjQ5LTguMiAxMjUuNDktMTEuMTVMMTI1LjQ5LTExLjE1UTEyNS40OS0yMC4xNSAxMTkuMjQtMjAuMTVaTTExOS4yNC0yMy40TDExOS4yNC0yMy40UTEyNC43OS0yMy40IDEyNy4zNC0xOS45NSAxMjkuODktMTYuNSAxMjkuODktMTAuOTVMMTI5Ljg5LTEwLjk1UTEyOS44OS02Ljk1IDEyNy43OS0zLjU1TDEyNy43OS0zLjU1UTEyNi42NC0xLjcgMTI0LjM0LTAuNTUgMTIyLjA0IDAuNiAxMTguODQgMC42TDExOC44NCAwLjZRMTEzLjM0IDAuNiAxMTAuODQtMi43IDEwOC4zNC02IDEwOC4zNC0xMS41NUwxMDguMzQtMTEuNTVRMTA4LjM0LTE0LjggMTA5LjM2LTE3LjA1IDExMC4zOS0xOS4zIDExMS41NC0yMC41MyAxMTIuNjktMjEuNzUgMTE0LjY5LTIyLjU4IDExNi42OS0yMy40IDExOS4yNC0yMy40Wk0xNTUuMTQtMTcuMjVMMTU1LjE0LTE3LjI1IDE1NS4xNCAwIDE1MC44OSAwIDE1MC44OS0xNy4wNVExNTAuODktMTguMzUgMTQ5Ljg2LTE5LjA1IDE0OC44NC0xOS43NSAxNDcuMTQtMTkuNzVMMTQ3LjE0LTE5Ljc1UTE0My41OS0xOS43NSAxMzkuNzktMTcuMkwxMzkuNzktMTcuMiAxMzkuNzkgMCAxMzUuNTQgMCAxMzUuNTQtMjIuOCAxMzguMjQtMjIuOCAxMzkuNDktMjAuMlExNDMuMzQtMjMuNCAxNDcuODQtMjMuNEwxNDcuODQtMjMuNFExNTEuMTktMjMuNCAxNTMuMTYtMjEuNyAxNTUuMTQtMjAgMTU1LjE0LTE3LjI1Wk0xOTMuOTMtMzMuN0wxOTIuNjMtMzAuMjVRMTg5LjEzLTMxLjQ1IDE4Ni4xMy0zMS40NSAxODMuMTMtMzEuNDUgMTgxLjIzLTI5LjkgMTc5LjMzLTI4LjM1IDE3OS4zMy0yNi4xNUwxNzkuMzMtMjYuMTVRMTc5LjMzLTIzIDE4Mi42OC0yMS4yTDE4Mi42OC0yMS4yIDE4OS43My0xNy4zUTE5NS42My0xNCAxOTUuNjMtOC44TDE5NS42My04LjhRMTk1LjYzLTQuNSAxOTIuNTgtMS45NSAxODkuNTMgMC42IDE4My45OCAwLjYgMTc4LjQzIDAuNiAxNzQuMDMtMS40TDE3NC4wMy0xLjQgMTc1LjI4LTQuOVExNzkuMzgtMy4xIDE4My4zNi0zLjEgMTg3LjMzLTMuMSAxODkuMjMtNC42NSAxOTEuMTMtNi4yIDE5MS4xMy04LjRMMTkxLjEzLTguNFExOTEuMTMtMTEuNTUgMTg3Ljc4LTEzLjM1TDE4Ny43OC0xMy4zNSAxODAuNzMtMTcuMjVRMTc0LjgzLTIwLjU1IDE3NC44My0yNS43NUwxNzQuODMtMjUuNzVRMTc0LjgzLTMwLjA1IDE3Ny44OC0zMi42IDE4MC45My0zNS4xNSAxODYuMDgtMzUuMTVMMTg2LjA4LTM1LjE1UTE4OS41OC0zNS4xNSAxOTMuOTMtMzMuN0wxOTMuOTMtMzMuN1pNMjEyLjc4LTE5LjY1TDIwNi4zMy0xOS42NSAyMDYuMzMtNS45NVEyMDYuMzMtMi45NSAyMDkuMTgtMi45NUwyMDkuMTgtMi45NVEyMTAuODMtMi45NSAyMTMuMTMtMy45TDIxMy4xMy0zLjkgMjEzLjY4LTAuNTVRMjExLjIzIDAuNiAyMDguNTMgMC42IDIwNS44MyAwLjYgMjA0LjAzLTEuMDMgMjAyLjIzLTIuNjUgMjAyLjIzLTZMMjAyLjIzLTYgMjAyLjIzLTE5LjY1IDE5OS4wOC0xOS42NSAxOTkuMDgtMjIuOCAyMDIuMjMtMjIuOCAyMDIuMjMtMjcuMyAyMDUuMzMtMzAuMTUgMjA2LjMzLTMwLjE1IDIwNi4zMy0yMi44IDIxMi43OC0yMi44IDIxMi43OC0xOS42NVpNMjE4LjE4IDBMMjE4LjE4LTIyLjggMjIwLjg4LTIyLjggMjIyLjEzLTE4LjggMjIyLjMzLTE4LjhRMjI1LjA4LTIyLjM1IDIyOS44OC0yMy4xTDIyOS44OC0yMy4xIDIzMC4zMy0xOS4xNVEyMjcuOTgtMTkgMjI1Ljc4LTE3Ljk1IDIyMy41OC0xNi45IDIyMi40My0xNS4xNUwyMjIuNDMtMTUuMTUgMjIyLjQzIDAgMjE4LjE4IDBaTTI0My4wNy0yLjlMMjQzLjA3LTIuOVEyNDYuNjctMi45IDI1MC4yNy01LjA1TDI1MC4yNy01LjA1IDI1MS43Mi0yLjA1UTI0Ny41MiAwLjYgMjQyLjc1IDAuNiAyMzcuOTcgMC42IDIzNS4xNy0yLjQzIDIzMi4zNy01LjQ1IDIzMi4zNy0xMS4xNSAyMzIuMzctMTYuODUgMjM1LjI3LTIwLjEzIDIzOC4xNy0yMy40IDI0Mi45Ny0yMy40TDI0Mi45Ny0yMy40UTI0Ny4zMi0yMy40IDI0OS44Mi0yMC43TDI0OS44Mi0yMC43UTI1MC44Ny0xOS42IDI1MS42LTE3LjUgMjUyLjMyLTE1LjQgMjUyLjMyLTEyLjU1TDI1Mi4zMi0xMi41NSAyNTAuNzctMTAuOCAyMzYuNjItMTAuOFEyMzYuNzctMi45IDI0My4wNy0yLjlaTTI0OC4xMi0xMy45NVEyNDguMTItMTYuNzUgMjQ2LjY3LTE4LjQ1IDI0NS4yMi0yMC4xNSAyNDIuODUtMjAuMTUgMjQwLjQ3LTIwLjE1IDIzOC44Mi0xOC40OCAyMzcuMTctMTYuOCAyMzYuODItMTMuOTVMMjM2LjgyLTEzLjk1IDI0OC4xMi0xMy45NVpNMjY2LjcyLTIuOUwyNjYuNzItMi45UTI3MC4zMi0yLjkgMjczLjkyLTUuMDVMMjczLjkyLTUuMDUgMjc1LjM3LTIuMDVRMjcxLjE3IDAuNiAyNjYuNCAwLjYgMjYxLjYyIDAuNiAyNTguODItMi40MyAyNTYuMDItNS40NSAyNTYuMDItMTEuMTUgMjU2LjAyLTE2Ljg1IDI1OC45Mi0yMC4xMyAyNjEuODItMjMuNCAyNjYuNjItMjMuNEwyNjYuNjItMjMuNFEyNzAuOTctMjMuNCAyNzMuNDctMjAuN0wyNzMuNDctMjAuN1EyNzQuNTItMTkuNiAyNzUuMjUtMTcuNSAyNzUuOTctMTUuNCAyNzUuOTctMTIuNTVMMjc1Ljk3LTEyLjU1IDI3NC40Mi0xMC44IDI2MC4yNy0xMC44UTI2MC40Mi0yLjkgMjY2LjcyLTIuOVpNMjcxLjc3LTEzLjk1UTI3MS43Ny0xNi43NSAyNzAuMzItMTguNDUgMjY4Ljg3LTIwLjE1IDI2Ni41LTIwLjE1IDI2NC4xMi0yMC4xNSAyNjIuNDctMTguNDggMjYwLjgyLTE2LjggMjYwLjQ3LTEzLjk1TDI2MC40Ny0xMy45NSAyNzEuNzctMTMuOTVaTTI5Mi43Ny0xOS42NUwyODYuMzItMTkuNjUgMjg2LjMyLTUuOTVRMjg2LjMyLTIuOTUgMjg5LjE3LTIuOTVMMjg5LjE3LTIuOTVRMjkwLjgyLTIuOTUgMjkzLjEyLTMuOUwyOTMuMTItMy45IDI5My42Ny0wLjU1UTI5MS4yMiAwLjYgMjg4LjUyIDAuNiAyODUuODIgMC42IDI4NC4wMi0xLjAzIDI4Mi4yMi0yLjY1IDI4Mi4yMi02TDI4Mi4yMi02IDI4Mi4yMi0xOS42NSAyNzkuMDctMTkuNjUgMjc5LjA3LTIyLjggMjgyLjIyLTIyLjggMjgyLjIyLTI3LjMgMjg1LjMyLTMwLjE1IDI4Ni4zMi0zMC4xNSAyODYuMzItMjIuOCAyOTIuNzctMjIuOCAyOTIuNzctMTkuNjVaIiBvcGFjaXR5PSIxIiB0cmFuc2Zvcm09Im1hdHJpeCgxLDAsMCwxLDAsMCkiIGZpbGw9IiNkMTUyNzIiIGNsYXNzPSJ3b3JkbWFyay10ZXh0LTAiIGRhdGEtZmlsbC1wYWxldHRlLWNvbG9yPSJwcmltYXJ5IiBpZD0idGV4dC0wIi8+PC9zdmc+PC9nPjwvc3ZnPjwvZz48L3N2Zz48L2c+PC9zdmc+PC9nPjxnIHRyYW5zZm9ybT0ibWF0cml4KDEsMCwwLDEsNDA3LjI3NDExNzc4NzQ4MDYsMCkiPjxzdmcgdmlld0JveD0iMCAwIDkxLjc5MDc4OTAzMzMxMDg3IDY4LjgwOTE1Nzk5Mjc1NzM2IiBoZWlnaHQ9IjY4LjgwOTE1Nzk5Mjc1NzM2IiB3aWR0aD0iOTEuNzkwNzg5MDMzMzEwODciPjxnPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIxLjMwMDE3ODYyMzcwMDIwMDcgMTMuNDkyMzkxNzAxMTg3MjUgOTcuNDAwODIxMzc2Mjk5NzkgNzMuMDE0NjA4Mjk4ODEyNzYiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMCAxMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIiBpZD0iaWNvbi0wIiB3aWR0aD0iOTEuNzkwNzg5MDMzMzEwODciIGhlaWdodD0iNjguODA5MTU3OTkyNzU3MzYiIGNsYXNzPSJpY29uLWljb24tMCIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCI+PHBhdGggZD0iTTQ5LjUyMiA0OC4yMjdBMC4zNCAwLjM0IDAgMCAwIDQ5LjM2MSA0OC4yMTRDNDkuMjA5IDQ4LjIzOSA0OC44NTggNDguMzE0IDQ4LjQ1OCA0OC41MjNBMC4xOSAwLjE5IDAgMCAxIDQ4LjI4MSA0OC41MjNDNDcuODgxIDQ4LjMxNCA0Ny41MzEgNDguMjM5IDQ3LjM3OCA0OC4yMTRBMC4zNCAwLjM0IDAgMCAwIDQ3LjIxNyA0OC4yMjdDNDUuNTQ5IDQ4Ljc1NyA0NC41OTIgNTAuNzMxIDQ0LjU5MiA1MC43MzFTNDQuODkyIDUxLjAzNiA0NS4zNTYgNTAuOTYzQzQ1LjY1NiA1MC45MTYgNDYuNDAyIDUwLjY4IDQ2Ljg5MyA1MC41MTkgNDcuMTk3IDUwLjQxOSA0Ny41MjIgNTAuNDI4IDQ3LjgyMiA1MC41NDIgNDguMTc2IDUwLjY3NyA0OC41NjMgNTAuNjc3IDQ4LjkxNiA1MC41NDIgNDkuMjE2IDUwLjQyOCA0OS41NDEgNTAuNDE5IDQ5Ljg0NSA1MC41MTkgNTAuMzM2IDUwLjY4IDUxLjA4MyA1MC45MTUgNTEuMzgzIDUwLjk2MyA1MS44NDcgNTEuMDM2IDUyLjE0NyA1MC43MzEgNTIuMTQ3IDUwLjczMVM1MS4xOSA0OC43NTcgNDkuNTIyIDQ4LjIyNyIgZmlsbD0iI2QxMjY4NSIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCIvPjxwYXRoIGQ9Ik05OC42MTYgMjUuMjQ3Uzk4LjYxNiAyNS4yNDYgOTguNjE2IDI1LjI0N0EwLjUgMC41IDAgMCAwIDk4LjI2MSAyNS4wMjlMOTguMjI0IDI1LjAyNkM4NC43ODggMjQuMzQ5IDY1LjA1NiAyNi40MDEgNjIuMDcgMjYuNzI1TDYwLjY4MiAyMy4xNzRDNTcuNjcgMTUuNDY3IDQ4LjUyNCAxMS41NSA0MC4yODggMTQuNDQ4TDM4LjQzMSAxNS4xMDFDMzQuMjc4IDE2LjU2MSAzMS4wMSAxOS40NzUgMjkuMjI5IDIzLjMwNiAyNy41NzkgMjYuODU1IDI3LjQyNCAzMC44MDIgMjguNzk0IDM0LjQyTDMwLjEzNiAzNy45NjJDMjcuNTY2IDM5LjYxNiAxMS4yMTEgNTAuMjQzIDEuNDY1IDU5LjA1N0EwLjUgMC41IDAgMCAwIDEuODAxIDU5LjkyOEgxLjgxNkMxLjk5MSA1OS45MjMgMTUuMjQzIDU5LjQyNyAzMi45MTUgNTIuMTI4IDMyLjc1OCA1NC40NjkgMzIuMTU3IDU3LjA5OCAzMC42NDQgNTkuNjYzIDI5Ljc2OCA2MS4xNDggMjguNjA4IDYyLjQzOSAyNy4zMDkgNjMuNTcyIDI0LjAyOCA2Ni40MzYgMTQuMTg0IDc2LjIxOSAxOS40NjUgODYuNTA3IDE5LjQ2NSA4Ni41MDcgMTkuNzY2IDgwLjE5MyAyNC43ODEgNzYuOTYgMjYuMDk5IDc2LjExMSAyNy42MyA3NS42NTIgMjkuMTg4IDc1LjQ3M0wzMi4yNDUgNzUuMTIxUzM0LjY1MiA3NC43NjIgMzcuMTU0IDczLjcxN0E3LjkgNy45IDAgMCAwIDQxLjgyNCA2OC4xNjNDNDIuNDA5IDY1LjU5MSA0Mi43MDYgNjEuNTM1IDQxLjY1NCA1NS41MjVBMjAgMjAgMCAwIDAgNDUuOTg1IDU3LjgzOEM0Ni42MTcgNTguMDg5IDQ3LjM2MSA1OC4yMTEgNDguMjYgNTguMjExUzQ5LjkwNCA1OC4wODkgNTAuNTMzIDU3LjgzOUEyMC40IDIwLjQgMCAwIDAgNTQuMzUxIDU1Ljg3M0w1My45NTkgNjMuNzQ1UzUzLjc4NCA2OC40MTYgNTUuNjcgNzEuMjYgNjIuMTEgNzQuMDgxIDYyLjExIDc0LjA4MSA1OC4yNjYgNzIuMjIyIDU3LjU0NyA2OC4wOTdDNTcuMDY4IDY1LjM0NyA1Ny43MjggNjMuMDU1IDU4LjIyMSA2MS44MzMgNTguNDI0IDYxLjMzIDU4LjYyMyA2MC44MjcgNTguODEyIDYwLjMyQTU1IDU1IDAgMCAxIDYwLjM1NiA1Ni42MDZDNjEuNjkzIDUzLjcgNjMuNjI4IDQ3LjQyOSA2NC4yMzcgNDAuMzkyIDg2Ljc2OCAzNS40NTEgOTguMzAyIDI2LjA5IDk4LjUxOCAyNS45MTFMOTguNTE5IDI1LjkxSDk4LjUyMVM5OC41MjMgMjUuOTEgOTguNTIzIDI1LjkwOEw5OC41ODIgMjUuODUgOTguNTgzIDI1Ljg0OUEwLjUgMC41IDAgMCAwIDk4LjY5OCAyNS41NzdDOTguNzAxIDI1LjU1NSA5OC43MDEgMjUuNTMzIDk4LjcwMSAyNS41MTFBMC41IDAuNSAwIDAgMCA5OC42MTYgMjUuMjQ3TTUwLjM0OCA1Ny4zNzRDNDkuNzc3IDU3LjYwMiA0OS4wOTMgNTcuNzEyIDQ4LjI1OCA1Ny43MTIgNDcuNDI0IDU3LjcxMiA0Ni43NCA1Ny42MDIgNDYuMTY2IDU3LjM3MyA0NC41MzkgNTYuNzM5IDQzLjA2MSA1NS45NDIgNDEuNzcgNTUuMDAzTDQxLjUxNyA1NC44MjRDMzkuODQ0IDUzLjY2NSAzOC41NzYgNTEuOTY1IDM3Ljg0IDQ5Ljk1NUExMjEgMTIxIDAgMCAwIDUxLjU0NyA0Mi40NSAxMjIgMTIyIDAgMCAxIDYwLjY4NiAzNy4xODlWNDAuNTc2QzYwLjY4NiA0MC43ODMgNjAuNjc3IDQwLjk5IDYwLjY2MiA0MS4xOTdBMTQgMTQgMCAwIDEgNjAuNDI2IDQyLjg5Mkw1OS4wOTggNDguNTc0QzU4LjUwMiA1MS4xODcgNTcuMDQ3IDUzLjQwOCA1NC45OTkgNTQuODI2TDU0Ljc0NCA1NS4wMDZDNTMuNDU2IDU1Ljk0MiA1MS45NzggNTYuNzM5IDUwLjM0OCA1Ny4zNzRNNjUuMTk2IDM0Ljk0Nkw2NC40MjUgMzYuMjI4QzY0LjQyNiAzNS45MjMgNjQuNDMgMzUuNjIgNjQuNDI0IDM1LjMxNCA2NC42ODIgMzUuMTkxIDY0Ljk0MSAzNS4wNjUgNjUuMTk2IDM0Ljk0Nk02NC40MDEgMzcuNzI0TDY2LjQwMSAzNC4zOTZDNjYuNzMgMzQuMjQ3IDY3LjA1NyAzNC4wOTkgNjcuMzgzIDMzLjk1NUw2NC4zNDEgMzkuMDE4QzY0LjM2NyAzOC41ODkgNjQuMzg2IDM4LjE1NyA2NC40MDEgMzcuNzI0TTY1LjEyNCAzOS4xNzJMNjguNTY5IDMzLjQzOUM2OC44OTIgMzMuMzAxIDY5LjIxIDMzLjE2OCA2OS41MjkgMzMuMDM1TDY1Ljk2NSAzOC45NjZDNjUuNjgxIDM5LjAzMyA2NS40MTIgMzkuMTA2IDY1LjEyNCAzOS4xNzJNNjYuOTkgMzguNzE1TDcwLjY5MiAzMi41NTRDNzEuMDA5IDMyLjQyNiA3MS4zMiAzMi4zMDUgNzEuNjMzIDMyLjE4Mkw2Ny44MzEgMzguNTA5QzY3LjU1NSAzOC41OCA2Ny4yNyAzOC42NDYgNjYuOTkgMzguNzE1TTY4Ljg2NSAzOC4yNDRMNzIuNzczIDMxLjc0MUM3My4wODQgMzEuNjIzIDczLjM5NCAzMS41MDYgNzMuNyAzMS4zOTNMNjkuNzI2IDM4LjAwNkM2OS40MzcgMzguMDg1IDY5LjE1OCAzOC4xNjcgNjguODY1IDM4LjI0NE03MC43NzUgMzcuNzE2TDc0LjgxOCAzMC45OUM3NS4xMjMgMzAuODgxIDc1LjQyOSAzMC43NzEgNzUuNzI5IDMwLjY2N0w3MS42MzYgMzcuNDc4QzcxLjM1NyAzNy41NTkgNzEuMDU5IDM3LjYzNiA3MC43NzUgMzcuNzE2TTcyLjcwOCAzNy4xNDlMNzYuODI3IDMwLjI5NUM3Ny4xMjggMzAuMTk1IDc3LjQyNCAzMC4wOTggNzcuNzIgMzAuMDAyTDczLjU4OCAzNi44NzdDNzMuMjk3IDM2Ljk2OCA3My4wMDUgMzcuMDU5IDcyLjcwOCAzNy4xNDlNNzQuNjYzIDM2LjU0Nkw3OC44MDMgMjkuNjU3Qzc5LjEgMjkuNTY1IDc5LjM4OSAyOS40NzkgNzkuNjggMjkuMzkxTDc1LjU2MyAzNi4yNDJDNzUuMjYxIDM2LjM0MyA3NC45NzIgMzYuNDQ2IDc0LjY2MyAzNi41NDZNNzYuNjY0IDM1Ljg2N0w4MC43NDQgMjkuMDc4QzgxLjAzNCAyOC45OTQgODEuMzI1IDI4LjkxIDgxLjYwOSAyOC44MzFMNzcuNTY1IDM1LjU2MUM3Ny4yNzQgMzUuNjYzIDc2Ljk2MSAzNS43NjQgNzYuNjY0IDM1Ljg2N003OC42OTEgMzUuMTQxTDgyLjY1MyAyOC41NDhDODIuOTQgMjguNDcyIDgzLjIyNCAyOC4zOTcgODMuNTA1IDI4LjMyNUw3OS42MTUgMzQuNzk3Qzc5LjMxMyAzNC45MTIgNzkuMDAxIDM1LjAyNiA3OC42OTEgMzUuMTQxTTgwLjc1NSAzNC4zNTZMODQuNTM2IDI4LjA2NkM4NC44MiAyNy45OTcgODUuMDk2IDI3LjkzMyA4NS4zNzIgMjcuODY4TDgxLjcwMyAzMy45NzNDODEuMzg5IDM0LjEgODEuMDc4IDM0LjIyOCA4MC43NTUgMzQuMzU2TTgyLjg2MiAzMy41TDg2LjM4NSAyNy42MzhDODYuNjYzIDI3LjU3NiA4Ni45NCAyNy41MTUgODcuMjEgMjcuNDU4TDgzLjgzNSAzMy4wNzVDODMuNTEgMzMuMjE2IDgzLjE5OCAzMy4zNTcgODIuODYyIDMzLjVNODUuMDIxIDMyLjU1N0w4OC4yMDkgMjcuMjUyQzg4LjQ4NiAyNy4xOTcgODguNzUzIDI3LjE0NyA4OS4wMiAyNy4wOTdMODYuMDIgMzIuMDg5Qzg1LjY4NiAzMi4yNDYgODUuMzY5IDMyLjQgODUuMDIxIDMyLjU1N004Ny4yNCAzMS41MTVMOTAuMDAxIDI2LjkyQzkwLjI3MyAyNi44NzIgOTAuNTM5IDI2LjgyNyA5MC43OTkgMjYuNzg1TDg4LjI2NCAzMS4wMDNDODcuOTI2IDMxLjE3MiA4Ny41OTcgMzEuMzQxIDg3LjI0IDMxLjUxNU04OS41MjkgMzAuMzU0TDkxLjc2NiAyNi42MzJDOTIuMDM1IDI2LjU5MiA5Mi4yOTggMjYuNTUzIDkyLjU1MiAyNi41MThMOTAuNTg0IDI5Ljc5M0M5MC4yNDcgMjkuOTc3IDg5Ljg4OSAzMC4xNjUgODkuNTI5IDMwLjM1NE05My4wMDcgMjguNDExQzkyLjY1NiAyOC42MiA5Mi4yOTEgMjguODM0IDkxLjkwMSAyOS4wNTZMOTMuNTAyIDI2LjM5M0M5My43NyAyNi4zNiA5NC4wMjggMjYuMzI5IDk0LjI3NCAyNi4zMDJ6TTk0LjM5MSAyNy41NjRMOTUuMjA3IDI2LjIwNkM5NS43MzkgMjYuMTU2IDk2LjIxMyAyNi4xMTggOTYuNjA4IDI2LjA5MiA5Ni4wNTcgMjYuNDgyIDk1LjMwMiAyNi45ODggOTQuMzkxIDI3LjU2NCIgZmlsbD0iI2QxMjY4NSIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCIvPjxwYXRoIGQ9Ik00OS4zMTYgNTEuMzE5UzQ4Ljg0OSA1MS41NiA0OC4zNjkgNTEuNTYgNDcuNDIyIDUxLjMxOSA0Ny40MjIgNTEuMzE5QzQ1Ljc2OSA1MC40NDMgNDQuOTUzIDUxLjYxOSA0NC45NTMgNTEuNjE5UzQ2LjQ1MiA1NC4wNDEgNDguMzcgNTQuMDIxQzUwLjI4OCA1NC4wNDEgNTEuNzg3IDUxLjYxOSA1MS43ODcgNTEuNjE5UzUwLjk2OSA1MC40NDMgNDkuMzE2IDUxLjMxOSIgZmlsbD0iI2QxMjY4NSIgZGF0YS1maWxsLXBhbGV0dGUtY29sb3I9ImFjY2VudCIvPjwvc3ZnPjwvZz48L3N2Zz48L2c+PC9zdmc+PC9nPjxkZWZzLz48L3N2Zz4="
+                    alt="">
+            </div>
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li> <a href="Contact.html">Contact</a></li>
+
+            </ul>
+            <div class="search">
+                <input type="text" name="" id="" placeholder="search Fashion street ">
+                <button> <i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="singin ">
+                <p> <span>Hello,Sign in</span></p>
+                <p class="nav-second"></p>Account.......</p>
+            </div>
+            <div class="return ">
+                <p> <span>Returns</span></p>
+                <p class="nav-second"></p> & Orders</p>
+            </div>
+        </nav>
+
+    </header>
+    <main>
+        <div class="continer">
+            <section class="cointiner">
+                <div class="slider-wrapper">
+                    <div class="slider">
+                        <img id="slid-1"
+                            src="https://images.unsplash.com/photo-1621184455862-c163dfb30e0f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbiUyMGdpcmx8ZW58MHx8MHx8fDA%3D"
+                            alt="">
+                        <img id="slid-2"
+                            src="https://images.unsplash.com/photo-1604702770018-55669959b124?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmFzaGlvbiUyMGdpcmx8ZW58MHx8MHx8fDA%3D"
+                            alt="">
+                        <img id="slid-3"
+                            src="https://images.unsplash.com/photo-1611601679655-7c8bc197f0c6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZmFzaGlvbiUyMGdpcmx8ZW58MHx8MHx8fDA%3D"
+                            alt="">
+                        <img id="slide-4"
+                            src="https://images.unsplash.com/photo-1603344797033-f0f4f587ab60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGZhc2hpb24lMjBnaXJsfGVufDB8fDB8fHww"
+                            alt="">
+                        <img id="slid-5"
+                            src="https://images.unsplash.com/photo-1623931218183-39a3a622fe3c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGZhc2hpb24lMjBnaXJsfGVufDB8fDB8fHww"
+                            alt="">
+                        <img id="slid-6"
+                            src="https://images.unsplash.com/photo-1622090567079-343116452be0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fGZhc2hpb24lMjBnaXJsfGVufDB8fDB8fHww"
+                            alt="">
+                        <img id="slid-7"
+                            src="https://images.unsplash.com/photo-1495385794356-15371f348c31?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGZhc2hpb24lMjBnaXJsfGVufDB8fDB8fHww"
+                            alt="">
+                        <img id="slid-8"
+                            src="https://images.unsplash.com/photo-1549062573-edc78a53ffa6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjJ8fGZhc2hpb24lMjBnaXJsfGVufDB8fDB8fHww"
+                            alt="">
+
+                    </div>
+
+                    <div class="slider-nav">
+                        <a href="#slide-1"></a>
+                        <a href="#slide-2"></a>
+                        <a href="#slide-3"></a>
+                        <a href="#slide-4"></a>
+                        <a href="#slide-5"></a>
+                        <a href="#slide-6"></a>
+                        <a href="#slide-7"></a>
+                        <a href="#slide-8"></a>
+                    </div>
+                </div>
+
+
+            </section>
+
+
+
+            <div class="cart">
+                <h2 class="my-2">New Fashion arrival</h2>
+                
+                <div class="cards">
+                    <div class="cart-items">
+                        <img src="https://media.istockphoto.com/id/2145244774/photo/happy-young-woman-in-a-vintage-floral-dress-and-straw-hat-walks-on-a-sunny-beach-smiles-with.jpg?s=612x612&w=0&k=20&c=l2DlBOa-EoV5ra4lXVD0eY4_PRs4lMN1CQqfz-zuCxY="
+                            alt="" width="205px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">summer collection</p>
+                            <p clas="text-center my-1">50% off </p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+                    </div>
+                    <div class="cart-items">
+                        <img src="https://images.unsplash.com/photo-1602010069450-0a62034f235c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmxvcmFsJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D"
+                            alt="" width="230px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">floral prints</p>
+                            <p clas="text-center my-1">summer sale offers</p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+                    </div>
+                    <div class="cart-items">
+                        <img src="https://images.unsplash.com/photo-1646277379248-bdbf06f4ed18?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dHJhdmVsJTIwZHJlc3N8ZW58MHx8MHx8fDA%3D"
+                            alt="" width="205
+                    px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">polka dots dresses</p>
+                            <p clas="text-center my-1">30% off </p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+                    </div>
+                    <div class="cart-items">
+                        <img src="https://images.unsplash.com/photo-1545291730-faff8ca1d4b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHRyZW5keSUyMG92ZXIlMjBzaXplZCUyMHRzaGlydHN8ZW58MHx8MHx8fDA%3D"
+                            alt="" width="205
+                    px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">cort sets</p>
+                            <p clas="text-center my-1">40% off </p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+                    </div>
+                    <div class="cart-items">
+                        <img src="https://images.unsplash.com/photo-1578632292335-df3abbb0d586?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fHRyZW5keSUyMG92ZXIlMjBzaXplZCUyMHRzaGlydHN8ZW58MHx8MHx8fDA%3D"
+                            alt="" width="205
+                    px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">Overcots</p>
+                            <p clas="text-center my-1">50% off </p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+                    </div>
+                    <div class="cart-items">
+                        <img src="https://images.unsplash.com/photo-1580651214613-f4692d6d138f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODB8fHRyZW5keSUyMG92ZXIlMjBzaXplZCUyMHRzaGlydHN8ZW58MHx8MHx8fDA%3D"
+                            alt="" width="205
+                    px">
+
+                        <div class="lines">
+                            <p clas="text-center my-1">women's bottem wear</p>
+                            <p clas="text-center my-1">70% off </p>
+                            <p clas="text-center my-1">Grab now!</p>
+                        </div>
+
+                    </div>
+                
+                
+                </div>
+        </div>
+        
+        <div class="cart">
+            <h2 class="my-2">Trending fashion street</h2>
+            <div class="cards">
+                <div class="cart-items">
+                    <img src="https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D"
+                        alt="" width="205px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1"> Formals</p>
+                        <p clas="text-center my-1">--offer Applied-- </p>
+                        <p clas="text-center my-1">Grab now!</p>
+                    </div>
+                </div>
+                <div class="cart-items">
+                    <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="" width="205px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1">--Shoes--</p>
+                        <p clas="text-center my-1">summer sale offers</p>
+                        <p clas="text-center my-1">Grab now!</p>
+                    </div>
+                </div>
+                <div class="cart-items">
+                    <img src="https://plus.unsplash.com/premium_photo-1711051513016-72baa1035293?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c2hvZXN8ZW58MHx8MHx8fDA%3D"
+                        alt="" width="205
+                px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1">Womens Sandles</p>
+                        <p clas="text-center my-1">--order now--</p>
+                        <p clas="text-center my-1">Free delivery!</p>
+                    </div>
+                </div>
+                <div class="cart-items">
+                    <img src="https://plus.unsplash.com/premium_photo-1673481767533-60901d9146ad?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGJhZ3N8ZW58MHx8MHx8fDA%3D"
+                        alt="" width="205
+                px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1">-accisories-</p>
+                        <p clas="text-center my-1">40% off </p>
+                        <p clas="text-center my-1">exclisive!</p>
+                    </div>
+                </div>
+                <div class="cart-items">
+                    <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJhZ3N8ZW58MHx8MHx8fDA%3D"
+                        alt="" width="205
+                px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1">Sling Bags</p>
+                        <p clas="text-center my-1">-20% off </p>
+                        <p clas="text-center my-1">Free deliviery!</p>
+                    </div>
+                </div>
+                <div class="cart-items">
+                    <img src="https://images.unsplash.com/photo-1472417583565-62e7bdeda490?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHNob2VzJTIwZm9ybWFsfGVufDB8fDB8fHww"
+                        alt="" width="205
+                px">
+
+                    <div class="lines">
+                        <p clas="text-center my-1">Watches</p>
+                        <p clas="text-center my-1">-exclesive-</p>
+                        <p clas="text-center my-1">Grab now!</p>
+                    </div>
+
+                </div>
+            </div>
+            
+            
+    </div>
+    <div class="cart">
+        <h2 class="my-2">Men's Fashion</h2>
+        <div class="cards">
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1516257984-b1b4d707412e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVucyUyMGZhc2hpb258ZW58MHx8MHx8fDA%3D="
+                    alt="" width="205px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">Denams jackets</p>
+                    <p clas="text-center my-1">50% off </p>
+                    <p clas="text-center my-1"></p>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1537261131936-3cdff36a1ac9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww"
+                    alt="" width="200px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">Jeans</p>
+                    <p clas="text-center my-1"> sale offers</p>
+                    <p clas="text-center my-1">Grab now!</p>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1619102814948-e164e584cf0c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww"
+                    alt="" width="205
+            px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">--Overcoats</p>
+                    <p clas="text-center my-1">winter offer </p>
+                    <p clas="text-center my-1">get your luck!</p>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1620012253295-c15cc3e65df4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww"
+                    alt="" width="230
+            px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">shirts</p>
+                    <p clas="text-center my-1">40% off </p>
+                    <p clas="text-center my-1">Grab now!</p>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1617331647819-2495792e53e4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww"
+                    alt="" width="205
+            px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">huddies</p>
+                    <p clas="text-center my-1">50% off </p>
+                    <p clas="text-center my-1">Grab now!</p>
+                </div>
+            </div>
+            <div class="cart-items">
+                <img src="https://images.unsplash.com/photo-1552642986-ccb41e7059e7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzV8fG1lbnMlMjBmYXNoaW9ufGVufDB8fDB8fHww"
+                    alt="" width="205
+            px">
+
+                <div class="lines">
+                    <p clas="text-center my-1">mens t-shirt</p>
+                    <p clas="text-center my-1">free delivery</p>
+                    <p clas="text-center my-1">Grab now!</p>
+                </div>
+
+            </div>
+        </div>
+        
+        
+</div>
+<div class="cart">
+    <h2 class="my-2">New collection</h2>
+    <div class="cards">
+        <div class="cart-items">
+            <img src="https://plus.unsplash.com/premium_photo-1675003662150-2569448d2b3b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cmluZ3N8ZW58MHx8MHx8fDA%3D="
+                alt="" width="205px">
+
+            <div class="lines">
+                <p clas="text-center my-1">Rings---</p>
+                <p clas="text-center my-1">50% off </p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+        </div>
+        <div class="cart-items">
+            <img src="https://images.unsplash.com/photo-1606906957131-ecf341381519?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bmVjayUyMGNoYWluc3xlbnwwfHwwfHx8MA%3D%3D"
+                alt="" width="205px">
+
+            <div class="lines">
+                <p clas="text-center my-1">chains</p>
+                <p clas="text-center my-1">summer sale offers</p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+        </div>
+        <div class="cart-items">
+            <img src="https://plus.unsplash.com/premium_photo-1681276168422-ebd2d7e95340?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGJyYWNsZXRzfGVufDB8fDB8fHww"
+                alt="" width="205
+        px">
+
+            <div class="lines">
+                <p clas="text-center my-1">--Combo--</p>
+                <p clas="text-center my-1">30% off </p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+        </div>
+        <div class="cart-items">
+            <img src="https://media.istockphoto.com/id/1658799868/photo/close-up-of-a-beautiful-designer-diamond-earrings-isolated-over-black-background.jpg?s=1024x1024&w=is&k=20&c=SRuZlpso-_i_xtHI34vW_9lxWUnOJyco_Z-BJanZdr4="
+                alt="" width="230
+        px">
+
+            <div class="lines">
+                <p clas="text-center my-1">EARINGS</p>
+                <p clas="text-center my-1">40% off </p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+        </div>
+        <div class="cart-items">
+            <img src="https://images.unsplash.com/photo-1609741873312-7ce5ae7c56b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bG9uZyUyMGRyZXNzfGVufDB8fDB8fHww"
+                alt="" width="205
+        px">
+
+            <div class="lines">
+                <p clas="text-center my-1">Longs Dress</p>
+                <p clas="text-center my-1">50% off </p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+        </div>
+        <div class="cart-items">
+            <img src="https://images.unsplash.com/photo-1562645361-c88442d7bc58?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGdvd25zfGVufDB8fDB8fHww"
+                alt="" width="205
+        px">
+
+            <div class="lines">
+                <p clas="text-center my-1">Fancy wear</p>
+                <p clas="text-center my-1">--trendy-- </p>
+                <p clas="text-center my-1">Grab now!</p>
+            </div>
+
+        </div>
+    </div>
+    
+    
+</div>
+        </div>
+    </main>
+
+    <footer >
+        <div class="foot-panel1">
+           Back to top
+        </div>
+        <div class="foot-panel2">
+            <ul>
+               <p>Get to Know Us</p>
+                <a>About Us</a>
+                <a>Careers</a>
+                <a>Blog</a>
+                <a>Invester relation</a>
+               
+            </ul>
+            <ul>
+                <p>Conatct with us</p>
+                 <a>Facebook</a>
+                 <a>Twitter</a>
+                 <a>instragram</a>
+                 <a>whatsups</a>
+                
+             </ul>
+             <ul>
+                <p>Make money with us</p>
+                 <a>globel selling</a>
+                 <a>build your brand</a>
+                 <a>advertise your products</a>
+                 <a>online payments</a>
+                
+             </ul>
+             <ul>
+                <p>Lets help you</p>
+                 <a>Your account</a>
+                 <a>Coustmer care</a>
+                 <a>returns center</a>
+                 <a>Help</a>
+                
+             </ul>
+        </div>
+        <div class="foot-panel3">
+            
+        </div>
+    </footer>
+    
+</body>
+
+</html>
